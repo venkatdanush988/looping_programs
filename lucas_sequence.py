@@ -11,31 +11,16 @@ Sample Output:
 0 0 1 1 2
 
 ***
-def generate_lucas_sequence(n):
-    # Initialize the first three terms
-    if n == 0:
-        return []
-    elif n == 1:
-        return [0]
-    elif n == 2:
-        return [0, 0]
-    elif n == 3:
-        return [0, 0, 1]
-
-    sequence = [0, 0, 1]
-
-    # Generate the sequence up to n terms
-    for i in range(3, n):
-        next_term = sequence[i - 1] + sequence[i - 2] + sequence[i - 3]
-        sequence.append(next_term)
-
-    return sequence
-
-# Input reading
-n = int(input().strip())
-
-# Generate the Lucas sequence
-lucas_sequence = generate_lucas_sequence(n)
-
-# Output result
-print(" ".join(map(str, lucas_sequence)))
+n=int(input())
+a=0
+b=0
+c=1
+print(a,end=’ ‘)
+print(b,end=’ ‘)
+print(c,end=’ ‘)
+for i in range (4,n+1):
+	d=a+b+c
+	a=b
+	b=c
+	c=d
+	print(d,end=’ ‘)
